@@ -50,14 +50,14 @@ export class ColorOutput extends Component {
                 break;
             case "complement":
                 colorOutput.push(<div>
-                    <span className="colorBox" style={{backgroundColor:"#"+store.getState().newColor}}></span>
-                    <span>#{store.getState().newColor}</span>
-                </div>);
+                        <span className="colorBox" style={{backgroundColor:"#"+store.getState().newColor}}></span>
+                        <span>#{store.getState().newColor}</span>
+                    </div>);
                 colorOutput.push(<hr />);
                 colorOutput.push(<div><span key="cb1" className="colorBox" style={
-                    {backgroundColor:'hsl('+this.clamp(store.getState().h+180)+', '+store.getState().s+'%, '+store.getState().v+'%)'}
+                    {backgroundColor:'hsl('+this.clamp(store.getState().h+360)+', '+store.getState().s+'%, '+store.getState().v+'%)'}
                 }></span>
-                <span>{this.clamp(store.getState().h+180)}, {store.getState().s}%, {store.getState().v}%</span>
+                <span>{this.clamp(store.getState().h+360)}, {store.getState().s}%, {store.getState().v}%</span>
                 </div>);
                 break;
             default: colorOutput.push(<div>Enter a hex code and click 'Bring me that rainbow'.</div>);
