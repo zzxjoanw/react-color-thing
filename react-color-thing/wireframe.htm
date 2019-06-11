@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <style>
+            body { margin:0; font-family: Arial, Helvetica, sans-serif; }
+            header { background-color:blueviolet; height:50px; text-align: center; }
+
+            form { margin:0; height:50px; }
+            button
+            {
+                border:hsl(271, 76%, 28%);
+                background: linear-gradient(90deg, red 0%, yellow 25%, rgba(0,255,0,1) 50%, blue 75%, rgba(255,0,255,1) 100%);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                color:blueviolet;
+                height:40px;
+                font-size:16px;
+                -webkit-text-stroke-width: 1px; -webkit-text-stroke-color:#777;
+            }
+
+            input, select { height:40px; margin-top:5px; border:0; text-align: center; }
+
+            #colorOutput, #meaningOutput { width:calc(50% - 6px); display:inline-block; padding:5px 0 0 5px; }
+
+            #colorOutput { float:left; display: flex; flex-direction: row; justify-content: space-around; }
+            #colorOutput div { display:inline-block; }
+            #colorOutput span { width:75px; text-align: center; display:block; }
+            #colorOutput .colorBox { height:75px; }
+
+            #meaningOutput { float:right; }
+            #meaningOutput h1 { font-weight:bold; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color:hsl(60, 100%, 25%); color:yellow; margin:0; }
+            #meaningOutput span { display:block; }
+
+            #vr {
+                width:1px;
+                height:calc(100vh - 60px);
+                display: inline-block;
+                background-color:grey;
+                margin:5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <form>
+                <input type="text" value="#e6f559">
+                <select>
+                    <option>Choose a color scheme type</option>
+                    <option>Monochromatic</option>
+                    <option>Analogous</option>
+                    <option>Complementary</option>
+                </select>
+                <div style="background-color:white; display:inline-block; height:40px; margin-top:5px; border-radius: 5px">
+                    <button>Bring me that rainbow</button>
+                </div>
+            </form>
+        </header>
+        <div id="colorOutput">
+            <div><span class="colorBox" style="background-color:#AEBF10"></span><span>#AEBF10</span></div>
+            <div><span class="colorBox" style="background-color:#D8ED14"></span><span>#D8ED14</span></div>
+            <div><span class="colorBox" style="background-color:#E1F243"></span><span>#E1F243</span></div>
+            <div><span class="colorBox" style="background-color:#E9F672"></span><span>#E9F672</span></div>
+            <div><span class="colorBox" style="background-color:#F1F9A1"></span><span>#F1F9A1</span></div>
+            <div><span class="colorBox" style="background-color:#E6F559"></span><span>#E6F559</span></div>
+        </div>
+        <div id="vr">&nbsp;</div>
+        <div id="meaningOutput">
+            <h1>Yellow</h1>
+            <span><b>The color of optimism. Yellow is a compelling color that conveys youthful and fresh energy. This color of sunshine is uplifting and illuminating and
+                associated with success and confidence. Yellow stimulates the left side of the brain, helping with clear thinking and quick decision making.</b></span>
+            <span><b>Wavelength:</b> 590-560nm</span>
+            <span><b>Emotion:</b> Enthusiasm, Opportunity, Spontaneity, Happiness, Positivity</span>
+            <span><b>Used To:</b> Stimulate, Relax, Awake Awareness, Energize, Affect Mood</span>
+            <span><b>Industry:</b> Food, Sports, Transportation, Travel, Leisure</span>
+        </div>
+    </body>
+</html>

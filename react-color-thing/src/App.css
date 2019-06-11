@@ -1,0 +1,38 @@
+body { margin:0; font-family: Arial, Helvetica, sans-serif; }
+header { background-color:blueviolet; height:50px; text-align: center; }
+
+form { margin:0; height:50px; }
+.buttonWrap { background-color:white; display:inline-block; height:40px; margin-top:5px; border-radius: 5px; }
+button
+{
+    border:hsl(271, 76%, 28%);
+    background: linear-gradient(90deg, red 0%, #ff0 25%, #0f0 50%, blue 75%, #f0f 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color:blueviolet;
+    height:40px;
+    font-size:16px;
+    -webkit-text-stroke-width: 1px; -webkit-text-stroke-color:#777;
+}
+
+input, select { height:40px; margin-top:5px; border:0; text-align: center; margin-right:2px; }
+
+
+#colorOutput, #meaningOutput { width:calc(50% - 6px); display:inline-block; padding:5px 0 0 5px; }
+
+#colorOutput { float:left; display: flex; flex-direction: row; justify-content: space-around; }
+#colorOutput div { display:inline-block; }
+#colorOutput span { width:75px; text-align: center; display:block; }
+#colorOutput .colorBox { height:75px; }
+
+#meaningOutput { float:right; }
+#meaningOutput h1 { font-weight:bold; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color:hsl(60, 100%, 25%); color:yellow; margin:0; }
+#meaningOutput span { display:block; }
+
+#vr {
+    width:1px;
+    height:calc(100vh - 60px);
+    display: inline-block;
+    background-color:grey;
+    margin:5px 0;
+}
