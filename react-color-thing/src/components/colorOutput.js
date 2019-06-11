@@ -16,9 +16,16 @@ export class ColorOutput extends Component {
     colorOutput() {
         let colorOutput=[];
         switch(store.getState().mode) {
-            case "monochrome": for(let i=0; i<5; i++) {
-                    colorOutput.push(<div>
-                            <span key={'cb'+i} className="colorBox" style={
+            case "monochrome":
+                colorOutput.push(<div>
+                    <span className="colorBox" style={{backgroundColor:"#"+store.getState().newColor}}></span>
+                    <span>#{store.getState().newColor}</span>
+                </div>);
+                colorOutput.push(<hr />);
+                for(let i=0; i<5; i++) {
+                    colorOutput.push(
+                    <div key={'cb'+i}>
+                            <span className="colorBox" style={
                                 { backgroundColor:'hsl('+store.getState().h+', '+store.getState().s+'%, '+i*25+'%)' }
                             }></span>
                             <span>{store.getState().h}, {store.getState().s}%, {i*25
@@ -27,6 +34,11 @@ export class ColorOutput extends Component {
                 }
                 break;
             case "analogic":
+                colorOutput.push(<div>
+                    <span className="colorBox" style={{backgroundColor:"#"+store.getState().newColor}}></span>
+                    <span>#{store.getState().newColor}</span>
+                </div>);
+                colorOutput.push(<hr />);
                 for(let i=-1; i<2; i++) {
                     colorOutput.push(<div>
                         <span key={'cb'+i} className="colorBox" style={
@@ -37,13 +49,18 @@ export class ColorOutput extends Component {
                 }
                 break;
             case "complement":
+                colorOutput.push(<div>
+                    <span className="colorBox" style={{backgroundColor:"#"+store.getState().newColor}}></span>
+                    <span>#{store.getState().newColor}</span>
+                </div>);
+                colorOutput.push(<hr />);
                 colorOutput.push(<div><span key="cb1" className="colorBox" style={
                     {backgroundColor:'hsl('+this.clamp(store.getState().h+180)+', '+store.getState().s+'%, '+store.getState().v+'%)'}
                 }></span>
                 <span>{this.clamp(store.getState().h+180)}, {store.getState().s}%, {store.getState().v}%</span>
                 </div>);
                 break;
-            default: 
+            default: colorOutput.push(<div>Enter a hex code and click 'Bring me that rainbow'.</div>);
         }
         return colorOutput;
     }
@@ -51,11 +68,6 @@ export class ColorOutput extends Component {
     render() {
         return (
             <div id="colorOutput">
-                <div>
-                    <span className="colorBox" style={{backgroundColor:"#"+store.getState().newColor}}></span>
-                    <span>#{store.getState().newColor}</span>
-                </div>
-                <hr />
                 {this.colorOutput()}
             </div>
         );
